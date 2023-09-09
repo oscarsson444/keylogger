@@ -1,6 +1,5 @@
 import os
 import pickle
-import sys
 
 # Gmail API utilities
 from googleapiclient.discovery import build
@@ -20,8 +19,6 @@ from mimetypes import guess_type as guess_mime_type
 
 # Constants
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
-sender = sys.argv[1]  # Sender's email address passed as command line argument
-to = sys.argv[2]  # Recipient's email address passed as command line argument
 
 
 # Authenticate the user to the Gmail API
@@ -86,6 +83,8 @@ def create_raw_email_message(message):
 
 # Send email with embedded image
 def send_email_with_embedded_image(sender, to, subject, message_text, image_filename):
+    print(sender, to)
+
     # Get Gmail API service
     service = authenticate()
 
@@ -110,7 +109,3 @@ def send_email_with_embedded_image(sender, to, subject, message_text, image_file
     except Exception as error:
         print("An error occurred: %s" % error)
         return None
-
-
-if __name__ == "__main__":
-    send_email_with_embedded_image(sender, to, "Keylog", "Hello World", "devil.png")
