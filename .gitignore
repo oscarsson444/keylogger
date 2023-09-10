@@ -1,5 +1,6 @@
 # Gmail api
 credentials.json
+credentials_jockster.json
 token.pickle
 .vscode
 logs

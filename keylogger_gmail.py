@@ -13,8 +13,6 @@ from base64 import urlsafe_b64encode
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
-from email.mime.audio import MIMEAudio
-from email.mime.base import MIMEBase
 from mimetypes import guess_type as guess_mime_type
 
 # Constants
